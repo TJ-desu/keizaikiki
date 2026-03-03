@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/ai-economic-crisis-2026.html"
+    }
+  ]
+}
