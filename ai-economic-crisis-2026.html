@@ -1,741 +1,771 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AIが経済を壊すとき ― 2026年、金融クラッシュの構造</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg: #ffffff;
-    --text: #111111;
-    --text-secondary: #555555;
-    --accent: #c23b22;
-    --accent-light: #f5e6e2;
-    --border: #e0e0e0;
-    --highlight-bg: #f7f7f7;
-    --data-bg: #1a1a1a;
-    --data-text: #f5f5f5;
-    --quote-border: #c23b22;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIが経済を壊すとき ― 2026年、金融クラッシュの構造</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #111111;
+      --text-secondary: #555555;
+      --accent: #c23b22;
+      --accent-light: #f5e6e2;
+      --border: #e0e0e0;
+      --highlight-bg: #f7f7f7;
+      --data-bg: #1a1a1a;
+      --data-text: #f5f5f5;
+      --quote-border: #c23b22;
+    }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  html {
-    background-color: #ffffff !important;
-  }
+    html {
+      background-color: #ffffff !important;
+    }
 
-  body {
-    background: #ffffff !important;
-    background-color: #ffffff !important;
-    color: #111111;
-    font-family: 'Noto Sans JP', sans-serif;
-    font-weight: 400;
-    line-height: 2;
-    font-size: 17px;
-    -webkit-font-smoothing: antialiased;
-  }
+    body {
+      background: #ffffff !important;
+      background-color: #ffffff !important;
+      color: #111111;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 400;
+      line-height: 2;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+    }
 
-  .header {
-    padding: 80px 24px 60px;
-    max-width: 780px;
-    margin: 0 auto;
-    border-bottom: 3px solid var(--text);
-  }
+    .header {
+      padding: 80px 24px 60px;
+      max-width: 780px;
+      margin: 0 auto;
+      border-bottom: 3px solid var(--text);
+    }
 
-  .header-label {
-    font-size: 12px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--accent);
-    font-weight: 700;
-    margin-bottom: 24px;
-  }
+    .header-label {
+      font-size: 12px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
 
-  h1 {
-    font-family: 'Noto Serif JP', serif;
-    font-size: clamp(28px, 5vw, 44px);
-    font-weight: 900;
-    line-height: 1.4;
-    margin-bottom: 20px;
-    letter-spacing: -0.02em;
-  }
+    h1 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(28px, 5vw, 44px);
+      font-weight: 900;
+      line-height: 1.4;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
 
-  .subtitle {
-    font-size: 18px;
-    color: var(--text-secondary);
-    line-height: 1.8;
-    font-weight: 300;
-  }
+    .subtitle {
+      font-size: 18px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      font-weight: 300;
+    }
 
-  .meta {
-    margin-top: 24px;
-    font-size: 13px;
-    color: var(--text-secondary);
-  }
+    .meta {
+      margin-top: 24px;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
 
-  article {
-    max-width: 780px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
+    article {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-  h2 {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 26px;
-    font-weight: 700;
-    margin: 64px 0 24px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--border);
-    line-height: 1.5;
-  }
+    h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 26px;
+      font-weight: 700;
+      margin: 64px 0 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      line-height: 1.5;
+    }
 
-  h3 {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 20px;
-    font-weight: 700;
-    margin: 40px 0 16px;
-    line-height: 1.5;
-  }
+    h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 20px;
+      font-weight: 700;
+      margin: 40px 0 16px;
+      line-height: 1.5;
+    }
 
-  p {
-    margin-bottom: 24px;
-  }
+    p {
+      margin-bottom: 24px;
+    }
 
-  .lead {
-    font-size: 19px;
-    line-height: 2.1;
-    margin: 48px 0 40px;
-    font-weight: 300;
-  }
+    .lead {
+      font-size: 19px;
+      line-height: 2.1;
+      margin: 48px 0 40px;
+      font-weight: 300;
+    }
 
-  .data-box {
-    background: var(--data-bg);
-    color: var(--data-text);
-    padding: 32px 36px;
-    margin: 36px 0;
-    border-radius: 2px;
-  }
+    .data-box {
+      background: var(--data-bg);
+      color: var(--data-text);
+      padding: 32px 36px;
+      margin: 36px 0;
+      border-radius: 2px;
+    }
 
-  .data-box .data-title {
-    font-size: 13px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 16px;
-    font-weight: 700;
-  }
+    .data-box .data-title {
+      font-size: 13px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
 
-  .data-box .data-number {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 42px;
-    font-weight: 900;
-    line-height: 1.2;
-    margin-bottom: 8px;
-  }
+    .data-box .data-number {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 42px;
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
 
-  .data-box .data-desc {
-    font-size: 15px;
-    line-height: 1.8;
-    opacity: 0.85;
-  }
+    .data-box .data-desc {
+      font-size: 15px;
+      line-height: 1.8;
+      opacity: 0.85;
+    }
 
-  .highlight-box {
-    background: var(--highlight-bg);
-    padding: 28px 32px;
-    margin: 36px 0;
-    border-left: 4px solid var(--accent);
-  }
+    .highlight-box {
+      background: var(--highlight-bg);
+      padding: 28px 32px;
+      margin: 36px 0;
+      border-left: 4px solid var(--accent);
+    }
 
-  .highlight-box p {
-    margin-bottom: 12px;
-    font-size: 16px;
-    line-height: 1.9;
-  }
+    .highlight-box p {
+      margin-bottom: 12px;
+      font-size: 16px;
+      line-height: 1.9;
+    }
 
-  .highlight-box p:last-child {
-    margin-bottom: 0;
-  }
+    .highlight-box p:last-child {
+      margin-bottom: 0;
+    }
 
-  .pullquote {
-    font-family: 'Noto Serif JP', serif;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1.7;
-    padding: 40px 0;
-    margin: 40px 0;
-    border-top: 2px solid var(--border);
-    border-bottom: 2px solid var(--border);
-    text-align: center;
-    color: var(--accent);
-  }
+    .pullquote {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.7;
+      padding: 40px 0;
+      margin: 40px 0;
+      border-top: 2px solid var(--border);
+      border-bottom: 2px solid var(--border);
+      text-align: center;
+      color: var(--accent);
+    }
 
-  .structure-list {
-    margin: 24px 0 36px;
-    padding: 0;
-    list-style: none;
-    counter-reset: structure;
-  }
+    .structure-list {
+      margin: 24px 0 36px;
+      padding: 0;
+      list-style: none;
+      counter-reset: structure;
+    }
 
-  .structure-list li {
-    counter-increment: structure;
-    padding: 16px 0 16px 48px;
-    position: relative;
-    border-bottom: 1px solid var(--border);
-    font-size: 16px;
-    line-height: 1.8;
-  }
+    .structure-list li {
+      counter-increment: structure;
+      padding: 16px 0 16px 48px;
+      position: relative;
+      border-bottom: 1px solid var(--border);
+      font-size: 16px;
+      line-height: 1.8;
+    }
 
-  .structure-list li::before {
-    content: counter(structure);
-    position: absolute;
-    left: 0;
-    top: 16px;
-    font-family: 'Noto Serif JP', serif;
-    font-size: 20px;
-    font-weight: 900;
-    color: var(--accent);
-    width: 32px;
-    text-align: center;
-  }
+    .structure-list li::before {
+      content: counter(structure);
+      position: absolute;
+      left: 0;
+      top: 16px;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--accent);
+      width: 32px;
+      text-align: center;
+    }
 
-  .arrow-chain {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 8px;
-    margin: 24px 0 36px;
-    font-size: 14px;
-    font-weight: 500;
-  }
+    .arrow-chain {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin: 24px 0 36px;
+      font-size: 14px;
+      font-weight: 500;
+    }
 
-  .arrow-chain span {
-    background: var(--data-bg);
-    color: var(--data-text);
-    padding: 6px 14px;
-    border-radius: 2px;
-    white-space: nowrap;
-  }
+    .arrow-chain span {
+      background: var(--data-bg);
+      color: var(--data-text);
+      padding: 6px 14px;
+      border-radius: 2px;
+      white-space: nowrap;
+    }
 
-  .arrow-chain .arrow {
-    background: none;
-    color: var(--accent);
-    padding: 0;
-    font-size: 18px;
-    font-weight: 900;
-  }
+    .arrow-chain .arrow {
+      background: none;
+      color: var(--accent);
+      padding: 0;
+      font-size: 18px;
+      font-weight: 900;
+    }
 
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 24px 0 36px;
-    font-size: 15px;
-  }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0 36px;
+      font-size: 15px;
+    }
 
-  th {
-    background: var(--data-bg);
-    color: var(--data-text);
-    padding: 12px 16px;
-    text-align: left;
-    font-weight: 500;
-    font-size: 13px;
-    letter-spacing: 1px;
-  }
+    th {
+      background: var(--data-bg);
+      color: var(--data-text);
+      padding: 12px 16px;
+      text-align: left;
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
 
-  td {
-    padding: 12px 16px;
-    border-bottom: 1px solid var(--border);
-  }
+    td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+    }
 
-  tr:nth-child(even) td {
-    background: var(--highlight-bg);
-  }
+    tr:nth-child(even) td {
+      background: var(--highlight-bg);
+    }
 
-  .section-divider {
-    text-align: center;
-    margin: 64px 0;
-    color: var(--border);
-    font-size: 24px;
-    letter-spacing: 16px;
-  }
+    .section-divider {
+      text-align: center;
+      margin: 64px 0;
+      color: var(--border);
+      font-size: 24px;
+      letter-spacing: 16px;
+    }
 
-  .disclaimer {
-    margin: 64px 0 48px;
-    padding: 24px 28px;
-    border: 1px solid var(--border);
-    font-size: 14px;
-    line-height: 1.9;
-    color: var(--text-secondary);
-  }
+    .disclaimer {
+      margin: 64px 0 48px;
+      padding: 24px 28px;
+      border: 1px solid var(--border);
+      font-size: 14px;
+      line-height: 1.9;
+      color: var(--text-secondary);
+    }
 
-  .footer {
-    max-width: 780px;
-    margin: 0 auto;
-    padding: 48px 24px 80px;
-    border-top: 3px solid var(--text);
-    font-size: 13px;
-    color: var(--text-secondary);
-    line-height: 1.9;
-  }
+    .footer {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+      border-top: 3px solid var(--text);
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.9;
+    }
 
-  @media (max-width: 600px) {
-    .header { padding: 48px 20px 40px; }
-    article { padding: 0 20px; }
-    .data-box { padding: 24px; }
-    .data-box .data-number { font-size: 32px; }
-    .highlight-box { padding: 20px 24px; }
-    .arrow-chain { font-size: 12px; }
-    .arrow-chain span { padding: 4px 10px; }
-  }
-</style>
+    @media (max-width: 600px) {
+      .header {
+        padding: 48px 20px 40px;
+      }
+
+      article {
+        padding: 0 20px;
+      }
+
+      .data-box {
+        padding: 24px;
+      }
+
+      .data-box .data-number {
+        font-size: 32px;
+      }
+
+      .highlight-box {
+        padding: 20px 24px;
+      }
+
+      .arrow-chain {
+        font-size: 12px;
+      }
+
+      .arrow-chain span {
+        padding: 4px 10px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<header class="header">
-  <div class="header-label">Analysis Report — March 2026</div>
-  <h1>AIが経済を壊すとき</h1>
-  <p class="subtitle">
-    AIの成功が金融システムを破壊し、地政学的暴力を生み、文明の構造的移行を引き起こす ―<br>
-    公開データのみから再構成した、2026年の世界の構造。
-  </p>
-  <p class="meta">2026年3月 ｜ 分析レポート</p>
-</header>
-
-<article>
-
-<p class="lead">
-  AIが仕事を奪う。物価が上がる。給料が上がらない。ローンが苦しくなる。不動産が下がる。<br>
-  普通に考えたらわかることが、もう始まっている。
-</p>
-
-<!-- ============================================ -->
-<h2>第1章　もう始まっていること</h2>
-<!-- ============================================ -->
-
-<p>
-  まず事実を確認する。予測ではない。既に起きていることだ。
-</p>
-
-<div class="data-box">
-  <div class="data-title">米国CRE（商業不動産）オフィスローン延滞率</div>
-  <div class="data-number">12.34%</div>
-  <div class="data-desc">
-    2026年1月、Trepp追跡開始以来の史上最高。2008年のリーマン・ショック時を約2ポイント上回る。「Extend and pretend（先延ばし）」戦略は終了宣言された。
-  </div>
-</div>
-
-<div class="data-box">
-  <div class="data-title">2026年に満期を迎えるCREローン</div>
-  <div class="data-number">9,300億ドル</div>
-  <div class="data-desc">
-    約140兆円。2027年にはさらに1.26兆ドル（190兆円）がピークを迎える。リファイナンス金利は4.76%から6.24%に上昇しており、借り換えが困難になっている。
-  </div>
-</div>
-
-<div class="data-box">
-  <div class="data-title">2025年の米国レイオフ</div>
-  <div class="data-number">117万人</div>
-  <div class="data-desc">
-    前年比54%増。採用数は49.7万人で、前年比35%減。2010年以来の最低水準。Glassdoor調査では、従業員の不安は2020年3月（コロナ・ショック）を超えた。
-  </div>
-</div>
-
-<p>
-  これらは個別の問題に見える。オフィスが空いている。レイオフが増えている。ローンの返済が苦しくなっている。個別に見れば、それぞれに理由があり、それぞれに「限定的」「封じ込め可能」と言える。
-</p>
-
-<p>
-  しかし全てが同じ方向を指している。そして全てが接続している。
-</p>
-
-<!-- ============================================ -->
-<h2>第2章　なぜAIの「成功」が経済を壊すのか</h2>
-<!-- ============================================ -->
-
-<p>
-  AIは素晴らしい技術だ。生産性を上げ、創造性を拡張し、人類の能力を高める。問題は、その成功が経済を壊すメカニズムにある。
-</p>
-
-<h3>AIのパラドックス</h3>
-
-<p>
-  AIが成功すればするほど、AIは人間の仕事を代替する。仕事が代替されれば、所得が減る。所得が減れば、消費が減る。消費が減れば、企業の売上が減る。売上が減れば、さらにAIで効率化しようとする。さらに人が減る。
-</p>
-
-<div class="arrow-chain">
-  <span>AIの成功</span>
-  <span class="arrow">→</span>
-  <span>雇用の代替</span>
-  <span class="arrow">→</span>
-  <span>所得の減少</span>
-  <span class="arrow">→</span>
-  <span>消費の減少</span>
-  <span class="arrow">→</span>
-  <span>企業の売上減</span>
-  <span class="arrow">→</span>
-  <span>さらなるAI化</span>
-</div>
-
-<p>
-  これは理論ではない。Block社（旧Square）はAIを理由に全社員の40%を削減した。Ford CEOは「ホワイトカラーの文字通り半分が置き換えられる」と述べた。Anthropic CEOのDario Amodeiは「エントリーレベルの仕事の50%が1-5年で破壊される」と述べた。
-</p>
-
-<p>
-  Conventionalローン（プライム層向け住宅ローン）の延滞率が上昇に転じた。27ベーシスポイントの上昇。小さな数字に見える。しかし方向が変わったことが重要だ。最低所得層の90日以上延滞率は0.5%から3.0%へ、6倍に急騰している。
-</p>
-
-<p>
-  集計指標は「3.2%で横ばい」と示す。しかし内訳を見れば、最低所得層は6倍に悪化し、プライム層は上昇に転じている。集計すると問題が見えなくなる。これが、この分析で「集約的不可視性」と呼ぶメカニズムだ。
-</p>
-
-<div class="pullquote">
-  2008年はサブプライムが崩壊した。<br>次はプライムが崩壊する。
-</div>
-
-<p>
-  2008年のサブプライム危機は、信用力の低い借り手の問題だった。プライム層は健全だったから、システムは（痛みを伴いながらも）回復できた。
-</p>
-
-<p>
-  しかしAIが破壊するのはプライム層だ。高学歴、高所得、高信用スコアのホワイトカラー。彼らはアメリカの13兆ドルの住宅ローン市場の中核であり、消費の柱であり、税収の源泉だ。中核が壊れれば、システム全体が壊れる。
-</p>
-
-<!-- ============================================ -->
-<h2>第3章　金融システムはどう壊れるか</h2>
-<!-- ============================================ -->
-
-<p>
-  金融の専門用語は最小限にする。メカニズムだけを理解してほしい。
-</p>
-
-<h3>BGGアクセラレータ ― 下落が下落を加速するメカニズム</h3>
-
-<p>
-  家を担保にお金を借りている人がいる。家の価格が下がると、担保の価値が下がる。銀行は追加の担保を要求するか、新しい融資を渋る。融資が止まれば、経済活動が縮小する。経済活動が縮小すれば、さらに家の価格が下がる。
-</p>
-
-<div class="arrow-chain">
-  <span>資産価格の下落</span>
-  <span class="arrow">→</span>
-  <span>担保価値の低下</span>
-  <span class="arrow">→</span>
-  <span>融資の引き締め</span>
-  <span class="arrow">→</span>
-  <span>経済の縮小</span>
-  <span class="arrow">→</span>
-  <span>さらなる価格下落</span>
-</div>
-
-<p>
-  これがBGGアクセラレータと呼ばれるメカニズムだ。下落が始まると自己強化する。そして一度作動すると、外部からの強力な介入（中央銀行の大規模緩和など）なしには止まらない。
-</p>
-
-<h3>安全弁は全て劣化している</h3>
-
-<p>
-  通常、このような金融システムの崩壊には安全弁がある。中央銀行の金融政策、政府の財政政策、国際協調、規制による保護。
-</p>
-
-<p>
-  しかし今回は、これらの安全弁が全て劣化している。
-</p>
-
-<div class="highlight-box">
-  <p><strong>金融政策：</strong>FRBはスタグフレーション（景気後退とインフレの同時進行）の前で麻痺している。利下げすればインフレが悪化し、利上げすれば景気がさらに悪化する。</p>
-  <p><strong>財政政策：</strong>政府の財政余力は既に限界に近い。そして軍事費に吸収されている。</p>
-  <p><strong>国際協調：</strong>米中の覇権競争で機能不全に陥っている。</p>
-  <p><strong>規制による保護：</strong>AI規制は安全保障の論理で後退している。</p>
-</div>
-
-<!-- ============================================ -->
-<h2>第4章　なぜ戦争が必要になるのか</h2>
-<!-- ============================================ -->
-
-<p>
-  2026年2月28日、アメリカはイランを攻撃した。Operation Epic Fury。核施設とミサイル施設への精密攻撃。AIが標的選定と戦闘シミュレーションに使用されたと報道された。
-</p>
-
-<p>
-  この攻撃の安全保障上の動機は明白だ。しかしこの分析は、もう一つの機能を指摘する。
-</p>
-
-<h3>インフレ的反作用</h3>
-
-<p>
-  AIは経済にデフレ圧力を生む。雇用が減り、所得が減り、消費が減る。デフレが進めば、借金の実質的な重みが増し、BGGアクセラレータが作動し、金融システムが崩壊する。
-</p>
-
-<p>
-  これを防ぐ方法の一つは、インフレを起こすことだ。名目値（数字上の価格や所得）が維持されれば、BGGの作動は遅延する。
-</p>
-
-<p>
-  イラン攻撃は原油価格を高騰させる。原油高騰はインフレ圧力を生む。インフレは名目値を維持する。名目値の維持はBGGの作動を遅延させる。
-</p>
-
-<p>
-  これが意図的なのか偶然なのかは検証できない。しかし構造として機能していることは事実だ。そしてCEA（大統領経済諮問委員会）がAIの経済的破壊力を認識した「大分岐（Great Divergence）」レポートを発表していること、作戦にAI（Claude）が使用されたことから、経済的影響が計算されていた可能性は高い。
-</p>
-
-<div class="pullquote">
-  AIのデフレが戦争のインフレを必要とし、<br>
-  戦争のインフレがAIの戦争利用を加速する。
-</div>
-
-<!-- ============================================ -->
-<h2>第5章　エネルギー、ロボット、資源 ― 覇権の全体像</h2>
-<!-- ============================================ -->
-
-<p>
-  AIの覇権は、知能だけでは完成しない。
-</p>
-
-<p>
-  AIは電力を大量に消費する。だから<strong>電力の支配</strong>がAI覇権の前提条件になる。イラン攻撃はホルムズ海峡の支配を通じて、世界のエネルギー供給に対するアメリカの影響力を強化する。
-</p>
-
-<p>
-  AIは知能を提供するが、物理的な世界に作用するには身体が必要だ。TeslaのOptimus（人型ロボット）がその身体になる。Optimusが量産されれば、AIの知能がロボットの身体を通じて肉体労働の大部分を代替できる。
-</p>
-
-<p>
-  しかしロボットを作るには資源が必要だ。リチウム、コバルト、レアアース。そしてこれらの資源の多くを中国が支配している。だからアメリカはグリーンランド、ウクライナ、深海採掘、宇宙に資源を求めている。
-</p>
-
-<div class="highlight-box">
-  <p><strong>AI</strong>（知能）＋ <strong>Optimus</strong>（身体）＋ <strong>電力</strong>（エネルギー）＋ <strong>資源</strong>（材料）＝ 完全な経済的自立</p>
-  <p>この4つを全て持つ者が、次の文明を設計する。</p>
-</div>
-
-<p>
-  そしてイーロン・マスクが4つ全てにアクセスできる位置にいる。xAI（AI）、Tesla（電力とOptimus）、SpaceX（宇宙へのアクセスと宇宙太陽光発電）、Starlink（通信）。一人の人間が、文明の次のフェーズに必要な全てのピースを持っている。
-</p>
-
-<!-- ============================================ -->
-<h2>第6章　クラッシュは事故ではない</h2>
-<!-- ============================================ -->
-
-<p>
-  ここで最も重要な問いを立てる。
-</p>
-
-<p>
-  <strong>世界で最も賢い人たちは、この構造を見ていないのか？</strong>
-</p>
-
-<p>
-  答えはNoだ。見ている。Scott Bessentはヘッジファンド出身の財務長官であり、マクロ経済構造を熟知している。CIAのアナリストはAIで情報を分析する任務を持つ。ヘッジファンドは既にCREのショートポジションを取っている。
-</p>
-
-<p>
-  では、クラッシュが来ることがわかっていて、止められないのなら、合理的な行動は何か。
-</p>
-
-<p>
-  <strong>クラッシュの後のポジションを取ることだ。</strong>
-</p>
-
-<p>
-  トランプ政権の行動を見てほしい。DOGEで政府機関を解体し、「前政権の失政」のナラティブを構築し、FRB議長を批判し、規制を撤廃し、イランを攻撃した。全ての行動が、クラッシュの責任を自分以外に帰属させ、クラッシュ後の再構築に最適化されている。
-</p>
-
-<p>
-  マスクの保有資産は全て、クラッシュ後に価値が最大化するものだ。既存の経済構造がクラッシュで一掃されれば、マスクのエコシステムの市場シェアは拡大する。
-</p>
-
-<p>
-  これは意図的な設計かもしれないし、合理的な人間が同じ状況に置かれれば自然にたどり着く最適戦略かもしれない。どちらであっても、結果は同じだ。
-</p>
-
-<!-- ============================================ -->
-<h2>第7章　東京はどうなるか</h2>
-<!-- ============================================ -->
-
-<p>
-  東京は世界最大の都市経済圏だ。GDP約2兆ドル。しかしその経済はほぼ全てがホワイトカラーの認知労働で成り立っている。金融、保険、不動産、コンサルティング、広告、IT、政府行政。AIが代替するのは、まさにこの認知労働だ。
-</p>
-
-<h3>東京不動産への波及経路</h3>
-
-<p>
-  アメリカのCRE危機が深刻化すれば、MBS（住宅ローン担保証券）の価格が下落する。日本の金融機関（農林中金、ゆうちょ銀行、メガバンク）はMBSを大量に保有しており、含み損が拡大する。含み損が拡大すれば国内融資が引き締められ、不動産向け融資が減少する。
-</p>
-
-<p>
-  同時に、円安が進行する。スタグフレーション下で日銀は利上げも利下げもできない。円が暴落すれば輸入物価が急騰し、消費者の実質所得が毀損される。
-</p>
-
-<table>
-  <tr>
-    <th>セグメント</th>
-    <th>予想下落幅</th>
-    <th>主な要因</th>
-  </tr>
-  <tr>
-    <td>商業オフィス</td>
-    <td>-40〜60%</td>
-    <td>AI代替でオフィス需要が構造的に消滅</td>
-  </tr>
-  <tr>
-    <td>高級レジデンシャル</td>
-    <td>-30〜50%</td>
-    <td>海外投資家撤退、富裕層資産毀損</td>
-  </tr>
-  <tr>
-    <td>一般レジデンシャル</td>
-    <td>-15〜30%</td>
-    <td>所得毀損と金利上昇の複合</td>
-  </tr>
-  <tr>
-    <td>J-REIT</td>
-    <td>-40〜60%</td>
-    <td>上場商品で最速最深の下落</td>
-  </tr>
-  <tr>
-    <td>物流・データセンター</td>
-    <td>-5〜10%</td>
-    <td>唯一需要増のセグメント（一時的影響のみ）</td>
-  </tr>
-</table>
-
-<h3>日本の雇用摩擦は守ってくれない</h3>
-
-<p>
-  日本には解雇規制がある。Block社のような40%即削減は日本では起きにくい。しかし別の経路で影響が来る。
-</p>
-
-<p>
-  採用が消える。新卒採用が絞られ、中途採用が凍結され、派遣契約が更新されない。残業代とボーナスが消える。AIで業務が効率化され、残業が減り、実質年収が50-100万円減る。中小企業が消える。大企業がAIで内製化し、下請けへの発注が消える。
-</p>
-
-<p>
-  統計上は「失業率横ばい」「賃金横ばい」に見える。しかし実態は所得が毀損されている。これが日本版の「集約的不可視性」だ。
-</p>
-
-<!-- ============================================ -->
-<h2>第8章　資産の逃げ場はあるか</h2>
-<!-- ============================================ -->
-
-<p>
-  ない。これが今回の危機の最も残酷な特徴だ。
-</p>
-
-<p>
-  株はAI恐怖で下落する。国債はスタグフレーションで不安定になる。円は暴落リスクがある。ドルはアメリカ自身のクラッシュリスクがある。金は史上最高圏にある。不動産はこれから下落する。暗号資産はボラティリティが高すぎる。
-</p>
-
-<p>
-  全ての資産クラスが同時にリスクにさらされている。AIが全てのセクターに同時に影響するからだ。2008年は不動産がダメでもテクノロジー株はすぐ回復した。今回はAIがどのセクターも追いかけてくる。
-</p>
-
-<p>
-  だから人は動かない。逃げ場がないなら、動いても意味がない。だから見ないふりをする。
-</p>
-
-<p>
-  しかし金融資産だけが資産ではない。スキル、認識、ネットワーク、負債の少なさ。これらはクラッシュの中で毀損されない。
-</p>
-
-<!-- ============================================ -->
-<h2>第9章　格差は縮小しない。極大化する</h2>
-<!-- ============================================ -->
-
-<p>
-  クラッシュで全員が損をする。しかし損の仕方が全く異なる。
-</p>
-
-<p>
-  住宅ローンを抱えた中間層。資産の大部分が自宅不動産だ。不動産価格が30-50%下落すれば純資産がマイナスになる。しかしローンは減らない。
-</p>
-
-<p>
-  一方、大量の現金を持つテック企業やヘッジファンドは、底値で資産を買い漁る。クラッシュの後に、さらに富を拡大する。2008年の後、BlackRockは底値で不動産を買い漁り世界最大の資産運用会社になった。
-</p>
-
-<p>
-  そしてAI自体が格差を拡大する。AIの利益はAIを所有する者に帰属する。AIで職を失う者は所得を失い、AIを所有する者は利益を得る。クラッシュはこの移転を加速させる。
-</p>
-
-<div class="pullquote">
-  クラッシュは民主化ではない。集中のメカニズムだ。
-</div>
-
-<!-- ============================================ -->
-<h2>第10章　見えているのに動かない理由</h2>
-<!-- ============================================ -->
-
-<p>
-  ここまで読んで、「普通に考えたらわかることだ」と感じた人もいるかもしれない。
-</p>
-
-<p>
-  その通りだ。AIが仕事を奪うことは誰でも知っている。物価が上がっていることは毎日実感している。アメリカの不動産がおかしいことはニュースで流れている。イランの戦争は全員が見た。
-</p>
-
-<p>
-  しかし多くの人は動かない。
-</p>
-
-<p>
-  わかっていないのではない。<strong>わかっていて、どうしようもないことがわかっている</strong>のだ。住宅ローンを抱えている。仕事を辞められない。資産を移す先がわからない。そして周りの誰も動いていない。自分だけ動くのは怖い。
-</p>
-
-<p>
-  これは知的問題ではなく心理的問題だ。データを見せても動かない人は動かない。動くのは自分の生活に直接影響が出た時だ。その時にはもう遅い。
-</p>
-
-<p>
-  2008年のサブプライム危機でも、2007年には問題が報道されていた。普通に考えたらわかった。しかし大半は動かず、動いたのは崩壊の後だった。
-</p>
-
-<!-- ============================================ -->
-<h2>終章　クラッシュの先にあるもの</h2>
-<!-- ============================================ -->
-
-<p>
-  この分析は悲観的に聞こえるかもしれない。しかし論理的に考えると、むしろ希望の所在を示している。
-</p>
-
-<p>
-  人類はクラッシュを経験してきた。1929年の大恐慌、2度の世界大戦、2008年の金融危機。そして毎回、クラッシュの後に制度を再構築した。大恐慌の後にニューディールが生まれ、第二次大戦の後にブレトンウッズ体制が生まれ、2008年の後にドッド＝フランク法が作られた。
-</p>
-
-<p>
-  人類は危機の前には制度を作れない。危機の中で制度を作る。痛みなしには学べない。
-</p>
-
-<p>
-  クラッシュは不可避かもしれない。しかしクラッシュの後にどのような制度を再構築するかは、不可避ではない。AIの利益を広く分配する制度を作る方向もあれば、少数者が独占する方向もある。
-</p>
-
-<p>
-  その選択は、クラッシュの前にこの構造を見ていた人間によって左右される。クラッシュの後に「何が起きたのか」「なぜ起きたのか」「次に何が起きるのか」を説明できる人間が、再構築の方向性に影響を与える。
-</p>
-
-<p>
-  この文書がその一つの基盤になれば、書いた意味がある。
-</p>
-
-<div class="section-divider">◆ ◆ ◆</div>
-
-<div class="disclaimer">
-  <strong>免責事項：</strong>この文書は公開情報とAI（Claude）との対話に基づく分析であり、投資助言ではありません。金融に関する判断は、必ず専門家に相談の上、ご自身の責任で行ってください。予測には不確実性が伴い、記述された事象が発生しない可能性もあります。各層の分析の妥当性には幅があり、特に時間軸の推察は最も不確実な要素です。
-</div>
-
-</article>
-
-<footer class="footer">
-  2026年3月 ｜ 本文書は公開情報のみに基づいて作成されています。
-</footer>
-
-<!-- Vercel Web Analytics（訪問者数・ページビュー追跡） -->
-<script>
-  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-</script>
-<script defer src="/_vercel/insights/script.js"></script>
-
-<!-- Vercel Speed Insights（パフォーマンス測定） -->
-<script defer src="/_vercel/speed-insights/script.js"></script>
+  <header class="header">
+    <div class="header-label">Analysis Report — March 2026</div>
+    <h1>AIが経済を壊すとき</h1>
+    <p class="subtitle">
+      AIの成功が金融システムを破壊し、地政学的暴力を生み、文明の構造的移行を引き起こす ―<br>
+      公開データのみから再構成した、2026年の世界の構造。
+    </p>
+    <p class="meta">2026年3月 ｜ 分析レポート</p>
+  </header>
+
+  <article>
+
+    <p class="lead">
+      AIが仕事を奪う。物価が上がる。給料が上がらない。ローンが苦しくなる。不動産が下がる。<br>
+      普通に考えたらわかることが、もう始まっている。
+    </p>
+
+    <!-- ============================================ -->
+    <h2>第1章　もう始まっていること</h2>
+    <!-- ============================================ -->
+
+    <p>
+      まず事実を確認する。予測ではない。既に起きていることだ。
+    </p>
+
+    <div class="data-box">
+      <div class="data-title">米国CRE（商業不動産）オフィスローン延滞率</div>
+      <div class="data-number">12.34%</div>
+      <div class="data-desc">
+        2026年1月、Trepp追跡開始以来の史上最高。2008年のリーマン・ショック時を約2ポイント上回る。「Extend and pretend（先延ばし）」戦略は終了宣言された。
+      </div>
+    </div>
+
+    <div class="data-box">
+      <div class="data-title">2026年に満期を迎えるCREローン</div>
+      <div class="data-number">9,300億ドル</div>
+      <div class="data-desc">
+        約140兆円。2027年にはさらに1.26兆ドル（190兆円）がピークを迎える。リファイナンス金利は4.76%から6.24%に上昇しており、借り換えが困難になっている。
+      </div>
+    </div>
+
+    <div class="data-box">
+      <div class="data-title">2025年の米国レイオフ</div>
+      <div class="data-number">117万人</div>
+      <div class="data-desc">
+        前年比54%増。採用数は49.7万人で、前年比35%減。2010年以来の最低水準。Glassdoor調査では、従業員の不安は2020年3月（コロナ・ショック）を超えた。
+      </div>
+    </div>
+
+    <p>
+      これらは個別の問題に見える。オフィスが空いている。レイオフが増えている。ローンの返済が苦しくなっている。個別に見れば、それぞれに理由があり、それぞれに「限定的」「封じ込め可能」と言える。
+    </p>
+
+    <p>
+      しかし全てが同じ方向を指している。そして全てが接続している。
+    </p>
+
+    <!-- ============================================ -->
+    <h2>第2章　なぜAIの「成功」が経済を壊すのか</h2>
+    <!-- ============================================ -->
+
+    <p>
+      AIは素晴らしい技術だ。生産性を上げ、創造性を拡張し、人類の能力を高める。問題は、その成功が経済を壊すメカニズムにある。
+    </p>
+
+    <h3>AIのパラドックス</h3>
+
+    <p>
+      AIが成功すればするほど、AIは人間の仕事を代替する。仕事が代替されれば、所得が減る。所得が減れば、消費が減る。消費が減れば、企業の売上が減る。売上が減れば、さらにAIで効率化しようとする。さらに人が減る。
+    </p>
+
+    <div class="arrow-chain">
+      <span>AIの成功</span>
+      <span class="arrow">→</span>
+      <span>雇用の代替</span>
+      <span class="arrow">→</span>
+      <span>所得の減少</span>
+      <span class="arrow">→</span>
+      <span>消費の減少</span>
+      <span class="arrow">→</span>
+      <span>企業の売上減</span>
+      <span class="arrow">→</span>
+      <span>さらなるAI化</span>
+    </div>
+
+    <p>
+      これは理論ではない。Block社（旧Square）はAIを理由に全社員の40%を削減した。Ford CEOは「ホワイトカラーの文字通り半分が置き換えられる」と述べた。Anthropic CEOのDario
+      Amodeiは「エントリーレベルの仕事の50%が1-5年で破壊される」と述べた。
+    </p>
+
+    <p>
+      Conventionalローン（プライム層向け住宅ローン）の延滞率が上昇に転じた。27ベーシスポイントの上昇。小さな数字に見える。しかし方向が変わったことが重要だ。最低所得層の90日以上延滞率は0.5%から3.0%へ、6倍に急騰している。
+    </p>
+
+    <p>
+      集計指標は「3.2%で横ばい」と示す。しかし内訳を見れば、最低所得層は6倍に悪化し、プライム層は上昇に転じている。集計すると問題が見えなくなる。これが、この分析で「集約的不可視性」と呼ぶメカニズムだ。
+    </p>
+
+    <div class="pullquote">
+      2008年はサブプライムが崩壊した。<br>次はプライムが崩壊する。
+    </div>
+
+    <p>
+      2008年のサブプライム危機は、信用力の低い借り手の問題だった。プライム層は健全だったから、システムは（痛みを伴いながらも）回復できた。
+    </p>
+
+    <p>
+      しかしAIが破壊するのはプライム層だ。高学歴、高所得、高信用スコアのホワイトカラー。彼らはアメリカの13兆ドルの住宅ローン市場の中核であり、消費の柱であり、税収の源泉だ。中核が壊れれば、システム全体が壊れる。
+    </p>
+
+    <!-- ============================================ -->
+    <h2>第3章　金融システムはどう壊れるか</h2>
+    <!-- ============================================ -->
+
+    <p>
+      金融の専門用語は最小限にする。メカニズムだけを理解してほしい。
+    </p>
+
+    <h3>BGGアクセラレータ ― 下落が下落を加速するメカニズム</h3>
+
+    <p>
+      家を担保にお金を借りている人がいる。家の価格が下がると、担保の価値が下がる。銀行は追加の担保を要求するか、新しい融資を渋る。融資が止まれば、経済活動が縮小する。経済活動が縮小すれば、さらに家の価格が下がる。
+    </p>
+
+    <div class="arrow-chain">
+      <span>資産価格の下落</span>
+      <span class="arrow">→</span>
+      <span>担保価値の低下</span>
+      <span class="arrow">→</span>
+      <span>融資の引き締め</span>
+      <span class="arrow">→</span>
+      <span>経済の縮小</span>
+      <span class="arrow">→</span>
+      <span>さらなる価格下落</span>
+    </div>
+
+    <p>
+      これがBGGアクセラレータと呼ばれるメカニズムだ。下落が始まると自己強化する。そして一度作動すると、外部からの強力な介入（中央銀行の大規模緩和など）なしには止まらない。
+    </p>
+
+    <h3>安全弁は全て劣化している</h3>
+
+    <p>
+      通常、このような金融システムの崩壊には安全弁がある。中央銀行の金融政策、政府の財政政策、国際協調、規制による保護。
+    </p>
+
+    <p>
+      しかし今回は、これらの安全弁が全て劣化している。
+    </p>
+
+    <div class="highlight-box">
+      <p><strong>金融政策：</strong>FRBはスタグフレーション（景気後退とインフレの同時進行）の前で麻痺している。利下げすればインフレが悪化し、利上げすれば景気がさらに悪化する。</p>
+      <p><strong>財政政策：</strong>政府の財政余力は既に限界に近い。そして軍事費に吸収されている。</p>
+      <p><strong>国際協調：</strong>米中の覇権競争で機能不全に陥っている。</p>
+      <p><strong>規制による保護：</strong>AI規制は安全保障の論理で後退している。</p>
+    </div>
+
+    <!-- ============================================ -->
+    <h2>第4章　なぜ戦争が必要になるのか</h2>
+    <!-- ============================================ -->
+
+    <p>
+      2026年2月28日、アメリカはイランを攻撃した。Operation Epic Fury。核施設とミサイル施設への精密攻撃。AIが標的選定と戦闘シミュレーションに使用されたと報道された。
+    </p>
+
+    <p>
+      この攻撃の安全保障上の動機は明白だ。しかしこの分析は、もう一つの機能を指摘する。
+    </p>
+
+    <h3>インフレ的反作用</h3>
+
+    <p>
+      AIは経済にデフレ圧力を生む。雇用が減り、所得が減り、消費が減る。デフレが進めば、借金の実質的な重みが増し、BGGアクセラレータが作動し、金融システムが崩壊する。
+    </p>
+
+    <p>
+      これを防ぐ方法の一つは、インフレを起こすことだ。名目値（数字上の価格や所得）が維持されれば、BGGの作動は遅延する。
+    </p>
+
+    <p>
+      イラン攻撃は原油価格を高騰させる。原油高騰はインフレ圧力を生む。インフレは名目値を維持する。名目値の維持はBGGの作動を遅延させる。
+    </p>
+
+    <p>
+      これが意図的なのか偶然なのかは検証できない。しかし構造として機能していることは事実だ。そしてCEA（大統領経済諮問委員会）がAIの経済的破壊力を認識した「大分岐（Great
+      Divergence）」レポートを発表していること、作戦にAI（Claude）が使用されたことから、経済的影響が計算されていた可能性は高い。
+    </p>
+
+    <div class="pullquote">
+      AIのデフレが戦争のインフレを必要とし、<br>
+      戦争のインフレがAIの戦争利用を加速する。
+    </div>
+
+    <!-- ============================================ -->
+    <h2>第5章　エネルギー、ロボット、資源 ― 覇権の全体像</h2>
+    <!-- ============================================ -->
+
+    <p>
+      AIの覇権は、知能だけでは完成しない。
+    </p>
+
+    <p>
+      AIは電力を大量に消費する。だから<strong>電力の支配</strong>がAI覇権の前提条件になる。イラン攻撃はホルムズ海峡の支配を通じて、世界のエネルギー供給に対するアメリカの影響力を強化する。
+    </p>
+
+    <p>
+      AIは知能を提供するが、物理的な世界に作用するには身体が必要だ。TeslaのOptimus（人型ロボット）がその身体になる。Optimusが量産されれば、AIの知能がロボットの身体を通じて肉体労働の大部分を代替できる。
+    </p>
+
+    <p>
+      しかしロボットを作るには資源が必要だ。リチウム、コバルト、レアアース。そしてこれらの資源の多くを中国が支配している。だからアメリカはグリーンランド、ウクライナ、深海採掘、宇宙に資源を求めている。
+    </p>
+
+    <div class="highlight-box">
+      <p><strong>AI</strong>（知能）＋ <strong>Optimus</strong>（身体）＋ <strong>電力</strong>（エネルギー）＋ <strong>資源</strong>（材料）＝
+        完全な経済的自立</p>
+      <p>この4つを全て持つ者が、次の文明を設計する。</p>
+    </div>
+
+    <p>
+      そしてイーロン・マスクが4つ全てにアクセスできる位置にいる。xAI（AI）、Tesla（電力とOptimus）、SpaceX（宇宙へのアクセスと宇宙太陽光発電）、Starlink（通信）。一人の人間が、文明の次のフェーズに必要な全てのピースを持っている。
+    </p>
+
+    <!-- ============================================ -->
+    <h2>第6章　クラッシュは事故ではない</h2>
+    <!-- ============================================ -->
+
+    <p>
+      ここで最も重要な問いを立てる。
+    </p>
+
+    <p>
+      <strong>世界で最も賢い人たちは、この構造を見ていないのか？</strong>
+    </p>
+
+    <p>
+      答えはNoだ。見ている。Scott
+      Bessentはヘッジファンド出身の財務長官であり、マクロ経済構造を熟知している。CIAのアナリストはAIで情報を分析する任務を持つ。ヘッジファンドは既にCREのショートポジションを取っている。
+    </p>
+
+    <p>
+      では、クラッシュが来ることがわかっていて、止められないのなら、合理的な行動は何か。
+    </p>
+
+    <p>
+      <strong>クラッシュの後のポジションを取ることだ。</strong>
+    </p>
+
+    <p>
+      トランプ政権の行動を見てほしい。DOGEで政府機関を解体し、「前政権の失政」のナラティブを構築し、FRB議長を批判し、規制を撤廃し、イランを攻撃した。全ての行動が、クラッシュの責任を自分以外に帰属させ、クラッシュ後の再構築に最適化されている。
+    </p>
+
+    <p>
+      マスクの保有資産は全て、クラッシュ後に価値が最大化するものだ。既存の経済構造がクラッシュで一掃されれば、マスクのエコシステムの市場シェアは拡大する。
+    </p>
+
+    <p>
+      これは意図的な設計かもしれないし、合理的な人間が同じ状況に置かれれば自然にたどり着く最適戦略かもしれない。どちらであっても、結果は同じだ。
+    </p>
+
+    <!-- ============================================ -->
+    <h2>第7章　東京はどうなるか</h2>
+    <!-- ============================================ -->
+
+    <p>
+      東京は世界最大の都市経済圏だ。GDP約2兆ドル。しかしその経済はほぼ全てがホワイトカラーの認知労働で成り立っている。金融、保険、不動産、コンサルティング、広告、IT、政府行政。AIが代替するのは、まさにこの認知労働だ。
+    </p>
+
+    <h3>東京不動産への波及経路</h3>
+
+    <p>
+      アメリカのCRE危機が深刻化すれば、MBS（住宅ローン担保証券）の価格が下落する。日本の金融機関（農林中金、ゆうちょ銀行、メガバンク）はMBSを大量に保有しており、含み損が拡大する。含み損が拡大すれば国内融資が引き締められ、不動産向け融資が減少する。
+    </p>
+
+    <p>
+      同時に、円安が進行する。スタグフレーション下で日銀は利上げも利下げもできない。円が暴落すれば輸入物価が急騰し、消費者の実質所得が毀損される。
+    </p>
+
+    <table>
+      <tr>
+        <th>セグメント</th>
+        <th>予想下落幅</th>
+        <th>主な要因</th>
+      </tr>
+      <tr>
+        <td>商業オフィス</td>
+        <td>-40〜60%</td>
+        <td>AI代替でオフィス需要が構造的に消滅</td>
+      </tr>
+      <tr>
+        <td>高級レジデンシャル</td>
+        <td>-30〜50%</td>
+        <td>海外投資家撤退、富裕層資産毀損</td>
+      </tr>
+      <tr>
+        <td>一般レジデンシャル</td>
+        <td>-15〜30%</td>
+        <td>所得毀損と金利上昇の複合</td>
+      </tr>
+      <tr>
+        <td>J-REIT</td>
+        <td>-40〜60%</td>
+        <td>上場商品で最速最深の下落</td>
+      </tr>
+      <tr>
+        <td>物流・データセンター</td>
+        <td>-5〜10%</td>
+        <td>唯一需要増のセグメント（一時的影響のみ）</td>
+      </tr>
+    </table>
+
+    <h3>日本の雇用摩擦は守ってくれない</h3>
+
+    <p>
+      日本には解雇規制がある。Block社のような40%即削減は日本では起きにくい。しかし別の経路で影響が来る。
+    </p>
+
+    <p>
+      採用が消える。新卒採用が絞られ、中途採用が凍結され、派遣契約が更新されない。残業代とボーナスが消える。AIで業務が効率化され、残業が減り、実質年収が50-100万円減る。中小企業が消える。大企業がAIで内製化し、下請けへの発注が消える。
+    </p>
+
+    <p>
+      統計上は「失業率横ばい」「賃金横ばい」に見える。しかし実態は所得が毀損されている。これが日本版の「集約的不可視性」だ。
+    </p>
+
+    <!-- ============================================ -->
+    <h2>第8章　資産の逃げ場はあるか</h2>
+    <!-- ============================================ -->
+
+    <p>
+      ない。これが今回の危機の最も残酷な特徴だ。
+    </p>
+
+    <p>
+      株はAI恐怖で下落する。国債はスタグフレーションで不安定になる。円は暴落リスクがある。ドルはアメリカ自身のクラッシュリスクがある。金は史上最高圏にある。不動産はこれから下落する。暗号資産はボラティリティが高すぎる。
+    </p>
+
+    <p>
+      全ての資産クラスが同時にリスクにさらされている。AIが全てのセクターに同時に影響するからだ。2008年は不動産がダメでもテクノロジー株はすぐ回復した。今回はAIがどのセクターも追いかけてくる。
+    </p>
+
+    <p>
+      だから人は動かない。逃げ場がないなら、動いても意味がない。だから見ないふりをする。
+    </p>
+
+    <p>
+      しかし金融資産だけが資産ではない。スキル、認識、ネットワーク、負債の少なさ。これらはクラッシュの中で毀損されない。
+    </p>
+
+    <!-- ============================================ -->
+    <h2>第9章　格差は縮小しない。極大化する</h2>
+    <!-- ============================================ -->
+
+    <p>
+      クラッシュで全員が損をする。しかし損の仕方が全く異なる。
+    </p>
+
+    <p>
+      住宅ローンを抱えた中間層。資産の大部分が自宅不動産だ。不動産価格が30-50%下落すれば純資産がマイナスになる。しかしローンは減らない。
+    </p>
+
+    <p>
+      一方、大量の現金を持つテック企業やヘッジファンドは、底値で資産を買い漁る。クラッシュの後に、さらに富を拡大する。2008年の後、BlackRockは底値で不動産を買い漁り世界最大の資産運用会社になった。
+    </p>
+
+    <p>
+      そしてAI自体が格差を拡大する。AIの利益はAIを所有する者に帰属する。AIで職を失う者は所得を失い、AIを所有する者は利益を得る。クラッシュはこの移転を加速させる。
+    </p>
+
+    <div class="pullquote">
+      クラッシュは民主化ではない。集中のメカニズムだ。
+    </div>
+
+    <!-- ============================================ -->
+    <h2>第10章　見えているのに動かない理由</h2>
+    <!-- ============================================ -->
+
+    <p>
+      ここまで読んで、「普通に考えたらわかることだ」と感じた人もいるかもしれない。
+    </p>
+
+    <p>
+      その通りだ。AIが仕事を奪うことは誰でも知っている。物価が上がっていることは毎日実感している。アメリカの不動産がおかしいことはニュースで流れている。イランの戦争は全員が見た。
+    </p>
+
+    <p>
+      しかし多くの人は動かない。
+    </p>
+
+    <p>
+      わかっていないのではない。<strong>わかっていて、どうしようもないことがわかっている</strong>のだ。住宅ローンを抱えている。仕事を辞められない。資産を移す先がわからない。そして周りの誰も動いていない。自分だけ動くのは怖い。
+    </p>
+
+    <p>
+      これは知的問題ではなく心理的問題だ。データを見せても動かない人は動かない。動くのは自分の生活に直接影響が出た時だ。その時にはもう遅い。
+    </p>
+
+    <p>
+      2008年のサブプライム危機でも、2007年には問題が報道されていた。普通に考えたらわかった。しかし大半は動かず、動いたのは崩壊の後だった。
+    </p>
+
+    <!-- ============================================ -->
+    <h2>終章　クラッシュの先にあるもの</h2>
+    <!-- ============================================ -->
+
+    <p>
+      この分析は悲観的に聞こえるかもしれない。しかし論理的に考えると、むしろ希望の所在を示している。
+    </p>
+
+    <p>
+      人類はクラッシュを経験してきた。1929年の大恐慌、2度の世界大戦、2008年の金融危機。そして毎回、クラッシュの後に制度を再構築した。大恐慌の後にニューディールが生まれ、第二次大戦の後にブレトンウッズ体制が生まれ、2008年の後にドッド＝フランク法が作られた。
+    </p>
+
+    <p>
+      人類は危機の前には制度を作れない。危機の中で制度を作る。痛みなしには学べない。
+    </p>
+
+    <p>
+      クラッシュは不可避かもしれない。しかしクラッシュの後にどのような制度を再構築するかは、不可避ではない。AIの利益を広く分配する制度を作る方向もあれば、少数者が独占する方向もある。
+    </p>
+
+    <p>
+      その選択は、クラッシュの前にこの構造を見ていた人間によって左右される。クラッシュの後に「何が起きたのか」「なぜ起きたのか」「次に何が起きるのか」を説明できる人間が、再構築の方向性に影響を与える。
+    </p>
+
+    <p>
+      この文書がその一つの基盤になれば、書いた意味がある。
+    </p>
+
+    <div class="section-divider">◆ ◆ ◆</div>
+
+    <div class="disclaimer">
+      <strong>免責事項：</strong>この文書は公開情報とAI（Claude）との対話に基づく分析であり、投資助言ではありません。金融に関する判断は、必ず専門家に相談の上、ご自身の責任で行ってください。予測には不確実性が伴い、記述された事象が発生しない可能性もあります。各層の分析の妥当性には幅があり、特に時間軸の推察は最も不確実な要素です。
+    </div>
+
+  </article>
+
+  <footer class="footer">
+    2026年3月 ｜ 本文書は公開情報のみに基づいて作成されています。
+  </footer>
+
+  <!-- Vercel Web Analytics（訪問者数・ページビュー追跡） -->
+  <script defer src="https://va.vercel-scripts.com/v1/script.js"></script>
+
+  <!-- Vercel Speed Insights（パフォーマンス測定） -->
+  <script defer src="https://vitals.vercel-insights.com/v1/vitals.js"></script>
 
 </body>
+
 </html>
